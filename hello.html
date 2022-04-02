@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Hello Vue!</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p v-pre>{{ message }}</p>
+        <p v-text="message"></p>
+        <hr>
+        <p>{{h1_message}}</p>
+        <p v-html="h1_message"></p>
+        <hr>
+        <a v-bind:href="url">Go to Website</a>
+        <br>
+        <a :href="url">Go to Website</a>
+        <hr>
+        <p>{{localEmail}}</p>
+        <hr>
+        <form action="">
+            <input type="button" value="Click" v-on:click="onclick" />
+        </form>
+        <p>computed: {{randomc}}</p>
+        <p>method: {{randomm()}}</p>
+        <p>Current time: {{ current }}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="hello.js"></script>
+</body>
+</html>
