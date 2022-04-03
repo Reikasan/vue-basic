@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Event Handler</h1>
+    <div id="app">
+        <!-- 1. v-on:EVENT_NAME = 'METHOD_NAME'-->
+        <button v-on:click.="onclick_1">Click event with Method name</button>
+
+        <!-- 2. v-on:EVENT_NAME = 'METHOD' -->
+        <button v-on:click='onclick_2("Hello Vue!", $event)'>Click event with call the Method</button> 
+
+        <!-- 3. shortened form -->
+        <button @click='onclick_1'>Click with shortened form</button> 
+
+        <!-- 4. Event with modifier -->
+        <button @click.once='onclick_1'>Click! It works only once!</button>
+
+        <p>{{message}}</p>
+    </div>
+    <hr>
+    <h2>Key Modifier</h2>
+    <div id="keyModifier">
+        <form action="">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" v-on:keyup.esc="clear" v-model="name">
+            </div>
+            <div>
+                <label for="body">Message</label>
+                <small><pre>shift</pre> + <pre>enter</pre> can show help message</small>
+                <textarea id="body" cols="30" rows="10" v-on:keyup.shift.enter.exact="help" v-model="body"></textarea>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <h2>Mouse Button Modifier</h2>
+    <div id="mouseButtonModifier">
+        <div id="main" v-on:click.right="clickRight">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/event.js"></script>
+</body>
+</html>

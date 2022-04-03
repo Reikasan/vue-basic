@@ -1,0 +1,29 @@
+hr {
+    margin: 50px 0;
+}
+
+#app button {
+    display: block;
+    margin: 10px;
+}
+
+#keyModifier form div {
+    margin: 10px;
+}
+#keyModifier input {
+    margin-left: 10px;
+}
+
+#keyModifier form small {
+    display: block;
+}
+
+#keyModifier form pre {
+    display: inline-block;
+}
+
+#main {
+    width: 300px;
+    height: 300px;
+    border: solid 1px blueviolet;
+}
