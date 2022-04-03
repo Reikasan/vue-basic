@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <div id="model">
+        <h2>Interactive Data binding</h2>
+        <form action="">
+            <label for="name">Name</label>
+            <input type="text" v-on:keyup.esc.exact="clear" id="name" v-model="myName">
+        </form>
+        <div>Hello {{myName}}!</div>
+    </div>
+    <hr>
+    <div id="example">
+        <h2>Example of v-model</h2>
+        <form action="">
+            <div>
+                <h3>Radio Button</h3>
+                <label for="man">Man</label>
+                <input type="radio" name="gender" id="man" value="Man" v-model="gender">
+                <br>
+                <label for="woman">Woman</label>
+                <input type="radio" name="gender" id="woman" value="Woman" v-model="gender">
+                <br>
+                <label for="other">Other</label>
+                <input type="radio" name="gender" id="other" value="Other" v-model="gender">
+            </div>
+            <hr>
+            <div>
+                <h3>Checkbox 1</h3>
+                <label for="agree">I understand ......</label>
+                <input type="checkbox" name="agree" id="agree" v-model="agree">
+                <p>Answer: {{agree}}</p>
+            </div>
+            <hr>
+            <div>
+                <h3>Checkbox 2</h3>
+                <p>Favorite Language</p>
+                <label for="html">HTML</label>
+                <input type="checkbox" id="html" value="HTML" v-model="language">
+                <label for="javascript">JavaScript</label>
+                <input type="checkbox" id="javascript" value="JavaScript" v-model="language">
+                <label for="php">PHP</label>
+                <input type="checkbox" id="php" value="PHP" v-model="language">
+                <label for="python">Python</label>
+                <input type="checkbox" id="python" value="Python" v-model="language">
+                <br>
+                <p>My Favorite Language is/are {{language}}</p>
+            </div>
+            <hr>
+            <div>
+                <h3>Bind Object</h3>
+                <label for="kb">1KB: </label>
+                <input type="radio" name="kb" id="kb" v-model="unit" v-bind:value="{name:'kilo-byte', size:1024}">
+                <br>
+                <label for="mb">1MB: </label>
+                <input type="radio" name="mb" id="mb" v-model="unit" v-bind:value="{name:'mega-byte', size:1048576}">
+                <br>
+                <label for="gb">1GB: </label>
+                <input type="radio" name="gb" id="gb" v-model="unit" v-bind:value="{name:'giga-byte', size:1073742000}">
+                <br>
+                <p>Selected Unit: {{unit.name}}/ {{unit.size}} byte</p>
+            </div>
+            <hr>
+            <div>
+                <h3>File</h3>
+                <input type="file" ref="upfile">
+                <input type="button" value="Upload" v-on:click="upload">
+                <br>
+                <p>{{result}}</p>
+            </div>
+        </form>
+       
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
