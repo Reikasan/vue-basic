@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Form 2</title>
+</head>
+<body>
+    <div id="modelModifier">
+        <form action="">
+            <div>
+                <h2>Modifier</h2>
+                <div>
+                    <h3>number modifier</h3>
+                    <label for="time">Time for 50m run</label>
+                    <input type="text" id="time" v-model.number="time">
+                    <input type="button" v-on:click="round" value="Round">
+                </div>
+                <hr>
+                <div>
+                    <h3>trim modifier</h3>
+                    <label for="message">Message: </label>
+                    <input type="text" v-model.trim="message">
+                    <br>
+                    <p>Input : {{message}}</p>
+                </div>
+                <hr>
+                <div>
+                    <h3>lazy modifier</h3>
+                    <label for="name">Name</label>
+                    <input type="text" v-model.lazy="myName">
+                    <br>
+                    <p>Hello {{myName}}!</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div id="customizedBinding">
+        <h2>Customize Interactive Data binding</h2>
+        <form action="">
+            <div>
+                <label for="name">Email: </label>
+                <textarea v-bind:value="emails.join(';')" v-on:input="emails=$event.target.value.split(';')"></textarea>
+            </div>
+        </form>
+        <ul>
+            <li v-for="email in emails">
+                {{email}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/form2.js"></script>
+</body>
+</html>
