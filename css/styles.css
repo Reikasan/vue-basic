@@ -32,3 +32,21 @@ input {
 #example input[type="checkbox"] {
     margin-right: 20px;
 }
+
+.panel {
+    width: 300px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.panel.red {
+    background-color: crimson;
+    color: white;
+}
+.panel.purple {
+    background-color: plum;
+    color: rebeccapurple;
+}
+.panel.blue {
+    border: solid 1px royalblue;
+}
