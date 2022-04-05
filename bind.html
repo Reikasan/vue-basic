@@ -26,8 +26,8 @@
                 <label for="name">Name: </label>
                 <input type="text" id="name" v-model.lazy="name">
             </form>
-            <div v-once>Hello {{name}}!</div>
-            <div>Hello {{name}}!</div>
+            <div v-once><span class="v-once">with "v-once": </span> Hello {{name}}!</div>
+            <div><span class="v-once">without "v-once": </span> Hello {{name}}!</div>
         </div>
         <hr>
         <div>

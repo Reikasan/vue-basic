@@ -71,3 +71,8 @@ input {
 [v-cloak] {
     display: none;
 }
+
+.v-once {
+    width: 150px;
+    display: inline-block;
+}
